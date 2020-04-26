@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">A simple game</string>
+    <string name="facebook_app_id">536370097317945</string>
+    <string name="fb_login_protocol_scheme">fb536370097317945</string>
+
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+    <string name="Register_confirm">가입하기</string>
+</resources>

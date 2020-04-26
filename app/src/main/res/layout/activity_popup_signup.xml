@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="300dp"
+    android:layout_height="500dp">
+
+    <EditText
+        android:id = "@+id/Popup_NicknameField"
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity = "center"
+        android:hint = "닉네임"
+        android:colorControlNormal = "#69d76b"
+        android:textColor = "#000000"
+        android:textColorHint = "#000000"
+        android:fontFamily = "@font/nanumsquareregular"
+        android:inputType = "text"
+        android:layout_marginTop="20dp"/>
+
+    <EditText
+        android:id = "@+id/Popup_PhoneField"
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity = "center"
+        android:hint = "전화번호"
+        android:colorControlNormal = "#69d76b"
+        android:textColor = "#000000"
+        android:textColorHint = "#000000"
+        android:fontFamily = "@font/nanumsquareregular"
+        android:inputType = "phone"
+        android:layout_marginTop="20dp"/>
+
+    <TextView
+        android:id = "@+id/Popup_gender"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop = "40dp"
+        android:text = "성별"
+        android:textColor = "#000000"
+        android:textSize = "20sp"
+        android:layout_marginLeft = "20dp"/>
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <ImageButton
+            android:id = "@+id/Popup_male"
+            android:layout_width = "wrap_content"
+            android:layout_height = "wrap_content"
+            android:layout_marginTop = "20dp"
+            android:layout_marginLeft = "20dp"
+            android:clickable="true"
+            android:onClick="onClick"
+            android:background = "@drawable/btn_rounded_blue"
+            android:padding = "25dp"
+            android:src = "@drawable/ic_male"/>
+
+        <ImageButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop = "20dp"
+            android:layout_marginLeft = "20dp"
+            android:clickable="true"
+            android:onClick="onClick"
+            android:background = "@drawable/btn_rounded_red"
+            android:id = "@+id/Popup_female"
+            android:padding = "25dp"
+            android:src = "@drawable/ic_female"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id = "@+id/Popup_maleText"
+            android:text = "남성"
+            android:textColor = "#000000"
+            android:fontFamily = "@font/nanumsquareregular"
+            android:textSize = "20sp"
+            android:layout_marginLeft="60dp"
+            android:layout_marginTop = "10dp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id = "@+id/Popup_femaleText"
+            android:text = "여성"
+            android:textColor = "#000000"
+            android:fontFamily = "@font/nanumsquareregular"
+            android:textSize = "20sp"
+            android:layout_marginLeft="95dp"
+            android:layout_marginTop = "10dp"/>
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/Popup_confirm"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|center"
+        android:layout_marginTop = "50dp"
+        android:background="@drawable/btn_roundedgradient"
+        android:drawableRight="@drawable/ic_arrow_right"
+        android:fontFamily="@font/nanumsquarebold"
+        android:paddingLeft="30dp"
+        android:paddingRight="20dp"
+        android:text="@string/Register_confirm"
+        android:textColor="#ffffff"
+        android:textSize="15dp"
+        android:textStyle="bold" />
+
+
+</LinearLayout>

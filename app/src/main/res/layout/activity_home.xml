@@ -1,0 +1,286 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background = "#171739">
+
+    <LinearLayout
+        android:orientation = "horizontal"
+        android:layout_marginTop = "40dp"
+        android:layout_width = "fill_parent"
+        android:layout_height = "wrap_content">
+
+        <ImageButton
+            android:id = "@+id/btn_mypage"
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+            android:layout_marginLeft = "10dp"
+            android:src = "@drawable/ic_mypage"
+            android:background = "#00ff0000"/>
+
+        <ImageButton
+            android:id = "@+id/btn_mute"
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+            android:layout_marginLeft = "320dp"
+            android:src = "@drawable/ic_mute"
+            android:background = "#00ff0000"/>
+
+    </LinearLayout>
+
+    <TextView
+        android:id = "@+id/title_Welcome"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text = "환영합니다!"
+        android:layout_marginTop = "20dp"
+        android:textColor = "#69d76b"
+        android:gravity = "center"
+        android:fontFamily="@font/nanumsquarebold"
+        android:textSize = "40sp"/>
+
+
+    <LinearLayout
+        android:orientation = "horizontal"
+        android:layout_width = "fill_parent"
+        android:layout_height = "wrap_content"
+        android:layout_marginTop = "60dp">
+
+        <ImageView
+            android:id = "@+id/ic_mainRanking"
+            android:layout_width = "wrap_content"
+            android:layout_height = "wrap_content"
+            android:src = "@drawable/ic_ranking"
+            android:layout_marginLeft = "30dp"/>
+
+        <TextView
+            android:id = "@+id/txt_mainRanking"
+            android:layout_width = "wrap_content"
+            android:layout_height = "wrap_content"
+            android:layout_marginLeft = "10dp"
+            android:text = "실시간 랭킹"
+            android:textColor = "#FFFFFF"
+            android:fontFamily = "@font/nanumsquarebold"
+            android:textSize = "25sp"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:orientation = "horizontal"
+        android:layout_width = "fill_parent"
+        android:layout_height = "wrap_content"
+        android:layout_marginTop = "20dp">
+
+        <TextView
+            android:id = "@+id/mainrank_1st"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text = "1"
+            android:textColor = "#ebd234"
+            android:textSize = "30sp"
+            android:fontFamily = "@font/nanumsquarebold"
+            android:layout_marginLeft = "60dp"/>
+
+        <TextView
+            android:id = "@+id/txt_mainrank_1st"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text = "ST"
+            android:textColor = "#ebd234"
+            android:fontFamily = "@font/nanumsquarebold"
+            android:textSize = "15sp"/>
+
+        <TextView
+            android:id = "@+id/value_mainrank_1st"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text = ""
+            android:textColor = "#ffffff"
+            android:layout_marginLeft = "20dp"
+            android:fontFamily = "@font/nanumsquarebold"
+            android:textSize = "30sp"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:orientation = "horizontal"
+        android:layout_width = "fill_parent"
+        android:layout_height = "wrap_content"
+        android:layout_marginTop = "20dp">
+
+        <TextView
+            android:id = "@+id/mainrank_2nd"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text = "2"
+            android:textColor = "#ebd234"
+            android:textSize = "30sp"
+            android:fontFamily = "@font/nanumsquarebold"
+            android:layout_marginLeft = "60dp"/>
+
+        <TextView
+            android:id = "@+id/txt_mainrank_2nd"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text = "ND"
+            android:textColor = "#ebd234"
+            android:fontFamily = "@font/nanumsquarebold"
+            android:textSize = "15sp"/>
+
+        <TextView
+            android:id = "@+id/value_mainrank_2nd"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text = ""
+            android:textColor = "#ffffff"
+            android:layout_marginLeft = "20dp"
+            android:fontFamily = "@font/nanumsquarebold"
+            android:textSize = "30sp"/>
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:orientation = "horizontal"
+        android:layout_width = "fill_parent"
+        android:layout_height = "wrap_content"
+        android:layout_marginTop = "20dp">
+
+        <TextView
+            android:id = "@+id/mainrank_3rd"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text = "3"
+            android:textColor = "#ebd234"
+            android:textSize = "30sp"
+            android:fontFamily = "@font/nanumsquarebold"
+            android:layout_marginLeft = "60dp"/>
+
+        <TextView
+            android:id = "@+id/txt_mainrank_3rd"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text = "RD"
+            android:textColor = "#ebd234"
+            android:fontFamily = "@font/nanumsquarebold"
+            android:textSize = "15sp"/>
+
+        <TextView
+            android:id = "@+id/value_mainrank_3rd"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text = ""
+            android:textColor = "#ffffff"
+            android:layout_marginLeft = "20dp"
+            android:fontFamily = "@font/nanumsquarebold"
+            android:textSize = "30sp"/>
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:orientation = "horizontal"
+        android:layout_width = "fill_parent"
+        android:layout_height = "wrap_content"
+        android:layout_marginTop = "20dp">
+
+        <TextView
+            android:id = "@+id/mainrank_4th"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text = "4"
+            android:textColor = "#ffffff"
+            android:textSize = "30sp"
+            android:fontFamily = "@font/nanumsquarebold"
+            android:layout_marginLeft = "60dp"/>
+
+        <TextView
+            android:id = "@+id/txt_mainrank_4th"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text = "TH"
+            android:textColor = "#ffffff"
+            android:fontFamily = "@font/nanumsquarebold"
+            android:textSize = "15sp"/>
+
+        <TextView
+            android:id = "@+id/value_mainrank_4th"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text = ""
+            android:textColor = "#ffffff"
+            android:layout_marginLeft = "20dp"
+            android:fontFamily = "@font/nanumsquarebold"
+            android:textSize = "30sp"/>
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:orientation = "horizontal"
+        android:layout_width = "fill_parent"
+        android:layout_height = "wrap_content"
+        android:layout_marginTop = "20dp">
+
+        <TextView
+            android:id = "@+id/mainrank_5th"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text = "5"
+            android:textColor = "#ffffff"
+            android:textSize = "30sp"
+            android:fontFamily = "@font/nanumsquarebold"
+            android:layout_marginLeft = "60dp"/>
+
+        <TextView
+            android:id = "@+id/txt_mainrank_5th"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text = "TH"
+            android:textColor = "#ffffff"
+            android:fontFamily = "@font/nanumsquarebold"
+            android:textSize = "15sp"/>
+
+        <TextView
+            android:id = "@+id/value_mainrank_5th"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text = ""
+            android:textColor = "#ffffff"
+            android:layout_marginLeft = "20dp"
+            android:fontFamily = "@font/nanumsquarebold"
+            android:textSize = "30sp"/>
+
+
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/mainRanking_more"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="#00ff0000"
+        android:fontFamily="@font/nanumsquareregular"
+        android:text="더 보기 >"
+        android:layout_marginLeft = "300dp"
+        android:textColor="#ffffff" />
+
+
+    <Button
+        android:id="@+id/startGame"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop = "40dp"
+        android:layout_gravity="center"
+        android:layout_marginRight = "5dp"
+        android:background="@drawable/btn_roundedgradient"
+        android:drawableRight="@drawable/ic_arrow_right"
+        android:fontFamily="@font/nanumsquarebold"
+        android:paddingLeft="30dp"
+        android:paddingRight="20dp"
+        android:text="게임 시작하기"
+        android:textColor="#ffffff"
+        android:textSize="15dp"
+        android:textStyle="bold" />
+
+</LinearLayout>

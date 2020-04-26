@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#171739"
+        android:orientation="vertical"
+        android:layout_centerInParent="true">
+
+        <TextView
+            android:id="@+id/GameOver"
+            android:layout_width="match_parent"
+            android:gravity="center"
+            android:layout_marginTop="50dp"
+            android:layout_height="wrap_content"
+            android:text="Game Over!"
+            android:textColor="#69d76b"
+            android:textSize="40sp"
+            android:fontFamily = "@font/nanumsquarebold"
+            android:textStyle="bold" />
+
+    <LinearLayout
+        android:layout_width = "fill_parent"
+        android:layout_height = "wrap_content"
+        android:layout_marginTop = "60dp"
+        android:layout_marginLeft = "30dp">
+
+        <LinearLayout
+            android:layout_width = "wrap_content"
+            android:layout_height = "wrap_content"
+            android:orientation = "vertical"
+            android:gravity = "center|start"
+            android:layout_marginLeft = "20dp">
+
+            <ImageView
+                android:id = "@+id/ic_result_score"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity = "center"
+                android:src = "@drawable/ic_result_answer"/>
+
+            <TextView
+                android:id = "@+id/score_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor = "#ffffff"
+                android:layout_marginTop = "20dp"
+                android:text = "정답"
+                android:fontFamily = "@font/nanumsquarebold"
+                android:textSize = "30sp"/>
+
+            <TextView
+                android:id = "@+id/textResult"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity = "center"
+                android:layout_marginTop = "20dp"
+                android:textSize = "20sp"
+                android:fontFamily = "@font/nanumsquarebold"
+                android:textColor = "#ffffff" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width = "wrap_content"
+            android:layout_height = "wrap_content"
+            android:orientation = "vertical"
+            android:gravity = "center|start"
+            android:layout_marginLeft = "60dp">
+
+            <ImageView
+                android:id = "@+id/ic_timer"
+                android:layout_width = "wrap_content"
+                android:layout_height = "wrap_content"
+                android:src = "@drawable/ic_result_time"/>
+
+            <TextView
+                android:id = "@+id/time_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor = "#ffffff"
+                android:layout_marginTop = "20dp"
+                android:text = " 시간"
+                android:fontFamily = "@font/nanumsquarebold"
+                android:textSize = "30sp"/>
+
+            <TextView
+                android:id = "@+id/textTime"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor = "#ffffff"
+                android:layout_gravity = "center"
+                android:layout_marginTop = "20dp"
+                android:textSize = "20sp"
+                android:fontFamily = "@font/nanumsquarebold" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width = "wrap_content"
+            android:layout_height = "wrap_content"
+            android:orientation = "vertical"
+            android:gravity = "center|start"
+            android:layout_marginLeft = "60dp">
+
+            <ImageView
+                android:id = "@+id/ic_score"
+                android:layout_width = "wrap_content"
+                android:layout_height = "wrap_content"
+                android:src = "@drawable/ic_result_score"/>
+
+            <TextView
+                android:id = "@+id/realscore_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor = "#ffffff"
+                android:layout_marginTop = "20dp"
+                android:layout_marginLeft = "5dp"
+                android:text = "점수"
+                android:fontFamily = "@font/nanumsquarebold"
+                android:textSize = "30sp"/>
+
+            <TextView
+                android:id = "@+id/textScore"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor = "#ffffff"
+                android:layout_gravity = "center"
+                android:layout_marginTop = "20dp"
+                android:textSize = "20sp"
+                android:fontFamily = "@font/nanumsquarebold" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+        <Button
+            android:id="@+id/btn"
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:background="@drawable/btn_roundedgradient"
+            android:drawableLeft="@drawable/ic_restart"
+            android:layout_marginTop="250dp"
+            android:layout_gravity = "center"
+            android:paddingLeft="40dp"
+            android:paddingRight = "50dp"
+            android:onClick="playagain"
+            android:text="PLAY AGAIN"
+            android:textColor="#ffffff"
+            android:textSize="20sp"/>
+    </LinearLayout>
+

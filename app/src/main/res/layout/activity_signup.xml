@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#171739">
+
+    <TextView
+        android:id="@+id/RegisterTitle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop = "20dp"
+        android:text = "회원가입"
+        android:textColor = "#69d76b"
+        android:textSize = "40sp"
+        android:fontFamily="@font/nanumsquarebold"
+        android:gravity="center_horizontal"/>
+
+    <EditText
+        android:id="@+id/Signup_email"
+        android:layout_width="350dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:layout_gravity = "center"
+        android:hint="E-Mail"
+        android:colorControlNormal = "#69d76b"
+        android:textColor = "#ffffff"
+        android:textColorHint = "#ffffff"
+        android:fontFamily = "@font/nanumsquareregular"
+        android:inputType="textEmailAddress" />
+
+    <EditText
+        android:id = "@+id/Signup_password"
+        android:layout_width="350dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity = "center"
+        android:hint = "비밀번호"
+        android:colorControlNormal = "#69d76b"
+        android:textColor = "#ffffff"
+        android:textColorHint = "#ffffff"
+        android:fontFamily = "@font/nanumsquareregular"
+        android:inputType="textPassword"
+        android:layout_marginTop="20dp"/>
+
+    <EditText
+        android:id = "@+id/Signup_NicknameField"
+        android:layout_width="350dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity = "center"
+        android:hint = "닉네임"
+        android:colorControlNormal = "#69d76b"
+        android:textColor = "#ffffff"
+        android:textColorHint = "#ffffff"
+        android:fontFamily = "@font/nanumsquareregular"
+        android:inputType = "text"
+        android:layout_marginTop="20dp"/>
+
+    <EditText
+        android:id = "@+id/Signup_PhoneField"
+        android:layout_width="350dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity = "center"
+        android:hint = "전화번호"
+        android:colorControlNormal = "#69d76b"
+        android:textColor = "#ffffff"
+        android:textColorHint = "#ffffff"
+        android:fontFamily = "@font/nanumsquareregular"
+        android:inputType = "phone"
+        android:layout_marginTop="20dp"/>
+
+    <TextView
+        android:id = "@+id/Signup_gender"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop = "40dp"
+        android:text = "성별"
+        android:textColor = "#ffffff"
+        android:textSize = "20sp"
+        android:layout_marginLeft = "20dp"/>
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <ImageButton
+            android:id = "@+id/register_male"
+            android:layout_width = "wrap_content"
+            android:layout_height = "wrap_content"
+            android:layout_marginTop = "20dp"
+            android:layout_marginLeft = "50dp"
+            android:clickable="true"
+            android:onClick="onClick"
+            android:background = "@drawable/btn_rounded_blue"
+            android:padding = "25dp"
+            android:src = "@drawable/ic_male"/>
+
+        <ImageButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop = "20dp"
+            android:layout_marginLeft = "70dp"
+            android:clickable="true"
+            android:onClick="onClick"
+            android:background = "@drawable/btn_rounded_red"
+            android:id = "@+id/register_female"
+            android:padding = "25dp"
+            android:src = "@drawable/ic_female"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id = "@+id/register_maleText"
+            android:text = "남성"
+            android:textColor = "#ffffff"
+            android:fontFamily = "@font/nanumsquareregular"
+            android:textSize = "20sp"
+            android:layout_marginLeft="90dp"
+            android:layout_marginTop = "10dp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id = "@+id/register_femaleText"
+            android:text = "여성"
+            android:textColor = "#ffffff"
+            android:fontFamily = "@font/nanumsquareregular"
+            android:textSize = "20sp"
+            android:layout_marginLeft="150dp"
+            android:layout_marginTop = "10dp"/>
+    </LinearLayout>
+
+        <Button
+            android:id="@+id/Signup_confirm"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom|center"
+            android:layout_marginTop = "50dp"
+            android:background="@drawable/btn_roundedgradient"
+            android:drawableRight="@drawable/ic_arrow_right"
+            android:fontFamily="@font/nanumsquarebold"
+            android:paddingLeft="30dp"
+            android:paddingRight="20dp"
+            android:text="@string/Register_confirm"
+            android:textColor="#ffffff"
+            android:textSize="15dp"
+            android:textStyle="bold" />
+
+
+
+</LinearLayout>

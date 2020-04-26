@@ -1,0 +1,210 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background = "#171739">
+
+    <LinearLayout
+        android:orientation = "horizontal"
+        android:layout_width = "fill_parent"
+        android:layout_height = "wrap_content"
+        android:layout_marginTop = "20dp">
+
+        <ImageButton
+            android:id = "@+id/Btn_Back"
+            android:layout_width = "wrap_content"
+            android:layout_height = "wrap_content"
+            android:clickable="true"
+            android:onClick="onClick"
+            android:layout_marginTop = "15dp"
+            android:layout_marginLeft = "10dp"
+            android:src = "@drawable/ic_back"
+            android:background = "#171739"/>
+
+        <TextView
+            android:id = "@+id/title_Level"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text = "난이도 설정"
+            android:layout_marginTop = "15dp"
+            android:textColor = "#69d76b"
+            android:layout_marginLeft = "70dp"
+            android:fontFamily="@font/nanumsquarebold"
+            android:textSize = "40sp"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id = "@+id/Level_SelectZone"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop = "40dp"
+        android:orientation = "horizontal">
+
+        <ImageButton
+            android:id = "@+id/btn_easy"
+            android:layout_width = "wrap_content"
+            android:layout_height = "wrap_content"
+            android:clickable="true"
+            android:onClick="onClick"
+            android:layout_marginLeft = "20dp"
+            android:background = "@drawable/btn_rounded2"
+            android:padding = "25dp"
+            android:src = "@drawable/ic_lv_easy"/>
+
+        <ImageButton
+            android:id = "@+id/btn_medium"
+            android:layout_width = "wrap_content"
+            android:layout_height = "wrap_content"
+            android:clickable="true"
+            android:onClick="onClick"
+            android:layout_marginLeft = "15dp"
+            android:background = "@drawable/btn_rounded2"
+            android:padding = "25dp"
+            android:src = "@drawable/ic_lv_medium"/>
+
+        <ImageButton
+            android:id = "@+id/btn_hard"
+            android:layout_width = "wrap_content"
+            android:layout_height = "wrap_content"
+            android:clickable="true"
+            android:onClick="onClick"
+            android:layout_marginLeft = "15dp"
+            android:background = "@drawable/btn_rounded2"
+            android:padding = "25dp"
+            android:src = "@drawable/ic_lv_hard"/>
+
+    </LinearLayout>
+
+        <LinearLayout
+            android:id = "@+id/Level_Text"
+            android:layout_width = "fill_parent"
+            android:layout_height = "wrap_content"
+            android:layout_marginTop = "20dp"
+            android:orientation = "horizontal">
+
+            <TextView
+                android:id = "@+id/txt_easy"
+                android:layout_width = "wrap_content"
+                android:layout_height = "wrap_content"
+                android:layout_marginLeft = "55dp"
+                android:text = "Easy"
+                android:textColor = "#FFFFFF"
+                android:textSize = "20sp"
+                android:fontFamily = "@font/nanumsquarebold"/>
+
+            <TextView
+                android:id = "@+id/txt_medium"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft = "70dp"
+                android:text = "Medium"
+                android:textSize = "20sp"
+                android:textColor = "#ffffff"
+                android:fontFamily = "@font/nanumsquarebold"/>
+
+            <TextView
+                android:id = "@+id/txt_hard"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft = "65dp"
+                android:text = "Hard"
+                android:textSize = "20sp"
+                android:textColor = "#ffffff"
+                android:fontFamily = "@font/nanumsquarebold"/>
+
+        </LinearLayout>
+
+    <Button
+        android:id="@+id/creativity_btn"
+        android:layout_width="400dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="end"
+        android:layout_marginTop = "30dp"
+        android:layout_marginRight = "5dp"
+        android:background="@drawable/btn_rounded2"
+        android:drawableLeft="@drawable/ic_lv_creativity"
+        android:drawableRight="@drawable/ic_arrow_right"
+        android:fontFamily="@font/nanumsquarebold"
+        android:padding = "10dp"
+        android:paddingLeft="20dp"
+        android:paddingRight="30dp"
+        android:text="창의력 사고 문제"
+        android:textColor="#ffffff"
+        android:textSize="15dp"
+        android:textStyle="bold" />
+
+    <LinearLayout
+        android:id = "@+id/Level_DescriptZone"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop = "60dp"
+        android:orientation = "horizontal">
+
+        <ImageView
+            android:id = "@+id/question"
+            android:layout_width = "wrap_content"
+            android:layout_height = "wrap_content"
+            android:src = "@drawable/ic_question"
+            android:layout_marginLeft = "50dp"/>
+
+        <TextView
+            android:id = "@+id/descript_level"
+            android:layout_width = "match_parent"
+            android:layout_height = "wrap_content"
+            android:layout_marginLeft = "10dp"
+            android:text = "난이도별 문제의 수준이 어떤가요?"
+            android:textColor = "#ffffff"
+            android:textSize = "20sp"
+            android:fontFamily = "@font/nanumsquarebold" />
+
+    </LinearLayout>
+
+    <TextView
+        android:id = "@+id/descript_easy"
+        android:layout_width = "match_parent"
+        android:layout_height = "wrap_content"
+        android:layout_marginTop = "20dp"
+        android:text = "Easy : 간단한 두자리 사칙연산까지 탑재되어있어요."
+        android:textColor = "#ffffff"
+        android:gravity = "center"
+        android:textSize = "15sp"
+        android:fontFamily = "@font/nanumsquarebold"/>
+
+
+    <TextView
+        android:id = "@+id/descript_medium"
+        android:layout_width = "match_parent"
+        android:layout_height = "wrap_content"
+        android:layout_marginTop = "20dp"
+        android:text = "Medium : 세자리 이상 사칙연산과 중학생 수준의 문제입니다."
+        android:textColor = "#ffffff"
+        android:gravity = "center"
+        android:textSize = "15sp"
+        android:fontFamily = "@font/nanumsquarebold"/>
+
+
+    <TextView
+        android:id = "@+id/descript_hard"
+        android:layout_width = "match_parent"
+        android:layout_height = "wrap_content"
+        android:layout_marginTop = "20dp"
+        android:text = "Hard : 고등학교 수학2 수준의 문제입니다."
+        android:textColor = "#ffffff"
+        android:gravity = "center"
+        android:textSize = "15sp"
+        android:fontFamily = "@font/nanumsquarebold"/>
+
+    <TextView
+        android:id = "@+id/descript_creativity"
+        android:layout_width = "match_parent"
+        android:layout_height = "wrap_content"
+        android:layout_marginTop = "20dp"
+        android:text = "창의력 사고 문제 : 도형, 규칙성 등을 추리하여\n 주어진 문제를 해결해야합니다."
+        android:textColor = "#ffffff"
+        android:gravity = "center"
+        android:textSize = "15sp"
+        android:fontFamily = "@font/nanumsquarebold"/>
+
+</LinearLayout>
