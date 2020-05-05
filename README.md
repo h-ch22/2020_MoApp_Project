@@ -43,7 +43,17 @@
               or facebook account, we moved all database to firestore from firebase realtime database, changed calculate score                : now we calculate (Time remaining + answered questions)
    - Bugs : Stable.
    - Not Developed yet : Multiplay, select Level, My Page
-
-2020-04-26
+   
+  2020-04-26
 
    - Added : Now you can use ranking feature
+   
+
+  2020-04-30
+
+   - Added : Now you can use realtime Online Multiplay game Service
+   - Not Developed yet : make waiting room over 2, online game result screen
+
+  2020-05-05
+
+   - Fixed you can't create and view multi waiting room only one, set you can't get room if player1, player2 both exists, set delete room if multiplay game is end, set startActivity to ResultActivity for Multiplay if  multiplay     game is end.

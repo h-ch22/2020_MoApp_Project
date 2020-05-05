@@ -91,7 +91,7 @@ public class SignUp extends BaseActivity {
 
                     UserInfo.put(nickname, send);
 
-                    db.collection("Users").document("UsersInfo")
+                    db.collection("Users").document(nickname)
                             .set(UserInfo, SetOptions.merge())
                             .addOnSuccessListener(new OnSuccessListener<Void>(){
                                 @Override

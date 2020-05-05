@@ -36,5 +36,14 @@ public class activity_gameType extends Activity {
                 finish();
             }
         });
+
+        Btn_Multi.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(activity_gameType.this, MultiWaiting.class);
+                startActivity(intent);
+                finish();
+            }
+        });
     }
 }

@@ -10,10 +10,14 @@ import android.widget.ImageButton;
 public class setLevel extends Activity {
     private ImageButton easy, medium, hard, back;
     private Button creativity;
+    public String level = "";
+    getLevel getlevel;
 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_level);
+
+        getlevel = new getLevel();
 
         easy = (ImageButton) findViewById(R.id.btn_easy);
         medium = (ImageButton) findViewById(R.id.btn_medium);
@@ -22,9 +26,29 @@ public class setLevel extends Activity {
         creativity = (Button) findViewById(R.id.creativity_btn);
 
         easy.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) { level = "Easy";
+                getlevel.setLv(level);
+                Intent intent = new Intent(setLevel.this, activity_gameType.class);
+                startActivity(intent);
+                finish();
+            }
+        });
 
+        medium.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                level = "Medium";
+                Intent intent = new Intent(setLevel.this, activity_gameType.class);
+                startActivity(intent);
+                finish();
+            }
+        });
+
+        hard.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                level = "Hard";
                 Intent intent = new Intent(setLevel.this, activity_gameType.class);
                 startActivity(intent);
                 finish();

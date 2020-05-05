@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="400dp"
+    android:layout_height="200dp">
+
+    <EditText
+        android:id = "@+id/create_roomname"
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity = "center"
+        android:hint = "방 이름"
+        android:colorControlNormal = "#69d76b"
+        android:textColor = "#000000"
+        android:textColorHint = "#000000"
+        android:fontFamily = "@font/nanumsquareregular"
+        android:inputType = "text"
+        android:layout_marginTop="20dp"/>
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="100dp"
+        android:layout_marginTop="30dp">
+
+        <Button
+            android:id="@+id/create_cancel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft = "40dp"
+            android:layout_gravity="start"
+            android:background="#00ff0000"
+            android:fontFamily="@font/nanumsquareregular"
+            android:text="취소"
+            android:textColor="#000000" />
+
+        <Button
+            android:id="@+id/create_confirm"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="end"
+            android:layout_marginRight = "5dp"
+            android:layout_marginLeft = "50dp"
+            android:background="@drawable/btn_roundedgradient"
+            android:drawableRight="@drawable/ic_arrow_right"
+            android:fontFamily="@font/nanumsquarebold"
+            android:paddingLeft="30dp"
+            android:paddingRight="20dp"
+            android:text="방 만들기"
+            android:textColor="#ffffff"
+            android:textSize="15dp"
+            android:textStyle="bold" />
+
+    </LinearLayout>
+
+</LinearLayout>

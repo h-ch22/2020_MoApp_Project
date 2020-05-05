@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#171739"
+    android:orientation="vertical"
+    android:layout_centerInParent="true">
+
+    <TextView
+        android:id="@+id/GameOver_Multi"
+        android:layout_width="match_parent"
+        android:gravity="center"
+        android:layout_marginTop="50dp"
+        android:layout_height="wrap_content"
+        android:text="게임 결과"
+        android:textColor="#69d76b"
+        android:textSize="40sp"
+        android:fontFamily = "@font/nanumsquarebold"
+        android:textStyle="bold" />
+
+    <LinearLayout
+        android:layout_width = "fill_parent"
+        android:layout_height = "wrap_content"
+        android:layout_marginTop = "20dp"
+        android:layout_marginLeft = "30dp">
+
+        <LinearLayout
+            android:layout_width = "wrap_content"
+            android:layout_height = "wrap_content"
+            android:orientation = "vertical"
+            android:gravity = "center|start"
+            android:layout_marginLeft = "20dp">
+
+            <ImageView
+                android:id = "@+id/ic_result_score"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity = "center"
+                android:src = "@drawable/ic_victoryuser"/>
+
+            <TextView
+                android:id = "@+id/victoryuserName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor = "#ffffff"
+                android:layout_marginTop = "20dp"
+                android:text = "VictoryUser"
+                android:layout_gravity = "center"
+                android:fontFamily = "@font/nanumsquarebold"
+                android:textSize = "30sp"/>
+
+            <TextView
+                android:id = "@+id/VictoryPoint"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity = "center"
+                android:layout_marginTop = "20dp"
+                android:textSize = "20sp"
+                android:text = "victoryPoint"
+                android:fontFamily = "@font/nanumsquarebold"
+                android:textColor = "#ffffff" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width = "wrap_content"
+        android:layout_height = "wrap_content"
+        android:orientation = "vertical"
+        android:gravity = "center|start"
+        android:layout_marginTop = "50dp"
+        android:layout_marginLeft = "60dp">
+
+        <ImageView
+            android:id = "@+id/ic_loser"
+            android:layout_width = "wrap_content"
+            android:layout_height = "wrap_content"
+            android:src = "@drawable/ic_loser"/>
+
+        <TextView
+            android:id = "@+id/loserName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor = "#ffffff"
+            android:layout_marginTop = "20dp"
+            android:text = "LoserName"
+            android:fontFamily = "@font/nanumsquarebold"
+            android:textSize = "30sp"/>
+
+        <TextView
+            android:id = "@+id/LosePoint"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor = "#ffffff"
+            android:layout_gravity = "center"
+            android:layout_marginTop = "20dp"
+            android:textSize = "20sp"
+            android:text = "loserPoint"
+            android:fontFamily = "@font/nanumsquarebold" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width = "fill_parent"
+        android:layout_height = "wrap_content"
+        android:layout_marginTop = "30dp"
+        android:gravity = "center">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src = "@drawable/ic_timer"
+            android:layout_gravity = "center"/>
+
+        <TextView
+            android:id = "@+id/title_TimeMulti"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text = ""
+            android:textColor = "#ffffff"
+            android:fontFamily = "@font/nanumsquarebold"
+            android:textSize = "20sp"/>
+
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/btn"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:background="@drawable/btn_roundedgradient"
+        android:drawableLeft="@drawable/ic_home"
+        android:layout_marginTop="20dp"
+        android:layout_gravity = "center"
+        android:paddingLeft="40dp"
+        android:paddingRight = "50dp"
+        android:onClick="playagain"
+        android:text="홈으로 돌아가기"
+        android:textColor="#ffffff"
+        android:textSize="20sp"/>
+</LinearLayout>
+

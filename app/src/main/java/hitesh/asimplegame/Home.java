@@ -58,6 +58,16 @@ public class Home extends Activity {
             }
         });
 
+        mypage.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(Home.this, Mypage.class);
+                startActivity(intent);
+                finish();
+            }
+        });
+
         more.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

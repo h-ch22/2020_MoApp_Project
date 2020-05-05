@@ -148,7 +148,9 @@ public class QuestionActivity extends Activity {
             // if questions are not over then do this
             currentQ = questionList.get(questionID);
             setQuestionView();
-        } else {
+        }
+
+        else {
             // if over do this
             timer.cancel();
             active = false;
