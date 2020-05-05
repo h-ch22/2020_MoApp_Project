@@ -5,22 +5,18 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#171739"
-    android:orientation="vertical"
-    android:weightSum="1" >
+    android:orientation="vertical">
 
     <LinearLayout
         android:id="@+id/linearLayout1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_weight="0.90"
-        android:orientation="vertical"
-        android:weightSum="1" >
+        android:orientation="vertical">
 
         <LinearLayout
             android:id="@+id/linearLayout11"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_weight="0.20"
             android:orientation="vertical">
 
             <LinearLayout
@@ -61,14 +57,12 @@
             android:id="@+id/linearLayout12"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_weight="0.60"
-            android:orientation="vertical"
-            android:weightSum="1" >
+            android:orientation="vertical">
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_weight="0.40" >
+                android:layout_marginTop = "30dp">
 
                 <TextView
                     android:id="@+id/txtQuestion"
@@ -87,9 +81,8 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_weight="0.20"
-                android:orientation="vertical"
-                android:weightSum="1" >
+                android:layout_marginTop = "20dp"
+                android:orientation="vertical">
 
                 <Button
                     android:id="@+id/button1"
@@ -182,19 +175,20 @@
 
     <LinearLayout
         android:layout_width = "fill_parent"
-        android:layout_height = "wrap_content">
+        android:layout_height = "wrap_content"
+        android:layout_marginTop = "50dp">
 
         <ImageView
             android:id = "@+id/ic_ingameScore1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginLeft = "30dp"
             android:src = "@drawable/ic_score"/>
 
         <TextView
             android:id="@+id/scoreTitle_player1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_centerHorizontal="true"
             android:layout_gravity="center"
             android:layout_marginLeft = "40dp"
             android:gravity="center"
@@ -209,25 +203,31 @@
             android:layout_height="wrap_content"
             android:layout_centerHorizontal="true"
             android:layout_gravity="center"
-            android:layout_marginLeft = "50dp"
+            android:layout_marginLeft = "20dp"
             android:gravity="center"
             android:text="0"
             android:textColor="#ffffff"
             android:textSize="25.0sp"
             android:textStyle="bold" />
 
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width = "fill_parent"
+        android:layout_height = "wrap_content"
+        android:layout_marginTop = "30dp">
+
         <ImageView
             android:id = "@+id/ic_ingameScore_player2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft = "110dp"
+            android:layout_marginLeft = "30dp"
             android:src = "@drawable/ic_score"/>
 
         <TextView
             android:id="@+id/scoreTitle_player2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_centerHorizontal="true"
             android:layout_gravity="center"
             android:layout_marginLeft = "40dp"
             android:gravity="center"
@@ -248,7 +248,6 @@
             android:textColor="#ffffff"
             android:textSize="25.0sp"
             android:textStyle="bold" />
-
 
     </LinearLayout>
 

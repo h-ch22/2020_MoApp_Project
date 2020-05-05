@@ -39,14 +39,14 @@ public class QuestionActivity_Multi extends MultiWaiting {
     private static final String TAG = "InGame_Multi";
 
     private List<Question> questionList;
-    private int score_user1, score_user2 = 0;
-    private String player1, player2;
+    public static int score_user1, score_user2 = 0;
+    public static String player1, player2;
     private int questionID = 0;
     private Question currentQ;
-    private TextView txtQuestion, times, scored_user1, scored_user2;
+    private TextView txtQuestion, times, scored_user1, scored_user2, scoreTitle_player1, scoreTitle_player2;
     private Button button1, button2, button3, button4, button5;
     public static int counter = 0;
-    public String hms;
+    public static String hms;
     CounterClass timer = new CounterClass(60000, 1000);
     static boolean active = false;
     private FirebaseAuth mAuth = FirebaseAuth.getInstance();
@@ -82,6 +82,8 @@ public class QuestionActivity_Multi extends MultiWaiting {
         // the textview in which score will be displayed
         scored_user1 = (TextView) findViewById(R.id.score_player1);
         scored_user2 = (TextView) findViewById(R.id.score_player2);
+        scoreTitle_player1 = (TextView) findViewById(R.id.scoreTitle_player1);
+        scoreTitle_player2 = (TextView) findViewById(R.id.scoreTitle_player2);
         // the timer
         times = (TextView) findViewById(R.id.timers);
 
@@ -163,6 +165,9 @@ public class QuestionActivity_Multi extends MultiWaiting {
                     if(document != null){
                         player1 = document.getString("player1");
                         player2 = document.getString("player2");
+
+                        scoreTitle_player1.setText(player1);
+                        scoreTitle_player2.setText(player2);
                     }
                 }
             }
@@ -226,43 +231,9 @@ public class QuestionActivity_Multi extends MultiWaiting {
             times.setText("Time is up");
             times.setTextColor(Color.RED);
             Intent intent = new Intent(QuestionActivity_Multi.this, ResultActivity_Multi.class);
-            final Bundle b = new Bundle();
+            Bundle b = new Bundle();
             b.putString("time", hms);
             intent.putExtras(b);
-
-            String currentRoom = info.getRoomInfo();
-            DocumentReference docRef = FirestoreDB.collection("MultiPlay").document(currentRoom);
-            docRef.get().addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
-                @Override
-                public void onComplete(@NonNull Task<DocumentSnapshot> task) {
-                    DocumentSnapshot documentSnapshot = task.getResult();
-                    mFirestore.collection("MultiPlay").document(roomName)
-                            .update("status", "End")
-                            .addOnSuccessListener(new OnSuccessListener<Void>() {
-                                @Override
-                                public void onSuccess(Void aVoid) {
-                                    b.putInt("playerscore1", score_user1);
-                                    b.putInt("playerscore2", score_user2);
-                                    b.putString("player1", player1);
-                                    b.putString("player2", player2);
-                                }
-                            });
-                }
-            });
-
-            docRef.delete().addOnSuccessListener(new OnSuccessListener<Void>() {
-                @Override
-                public void onSuccess(Void aVoid) {
-                        Log.d(TAG, "WaitingRoom is deleted.");
-                }
-            })
-                    .addOnFailureListener(new OnFailureListener() {
-                        @Override
-                        public void onFailure(@NonNull Exception e) {
-                            Log.w(TAG, "Error deleting room", e);
-                        }
-                    });
-
             startActivity(intent);
             finish();
         }
@@ -339,10 +310,6 @@ public class QuestionActivity_Multi extends MultiWaiting {
                         // if over do this
                         timer.cancel();
                         active = false;
-                        Intent intent = new Intent(QuestionActivity_Multi.this, ResultActivity_Multi.class);
-                        final Bundle b = new Bundle();
-                        b.putString("time", hms);
-                        intent.putExtras(b);
 
                         String currentRoom = info.getRoomInfo();
                         DocumentReference docRef = FirestoreDB.collection("MultiPlay").document(currentRoom);
@@ -355,29 +322,16 @@ public class QuestionActivity_Multi extends MultiWaiting {
                                         .addOnSuccessListener(new OnSuccessListener<Void>() {
                                             @Override
                                             public void onSuccess(Void aVoid) {
-                                                b.putInt("playerscore1", score_user1);
-                                                b.putInt("playerscore2", score_user2);
-                                                b.putString("player1", player1);
-                                                b.putString("player2", player2);
+
                                             }
                                         });
                             }
                         });
 
-                        docRef.delete().addOnSuccessListener(new OnSuccessListener<Void>() {
-                            @Override
-                            public void onSuccess(Void aVoid) {
-                                Log.d(TAG, "WaitingRoom is deleted.");
-                            }
-                        })
-                                .addOnFailureListener(new OnFailureListener() {
-                                    @Override
-                                    public void onFailure(@NonNull Exception e) {
-                                        Log.w(TAG, "Error deleting room", e);
-                                    }
-                                });
-
-                        intent.putExtras(b); // Put your score to your next
+                        Intent intent = new Intent(QuestionActivity_Multi.this, ResultActivity_Multi.class);
+                        Bundle b = new Bundle();
+                        b.putString("time", hms);
+                        intent.putExtras(b);
                         startActivity(intent);
                         finish();
                     }

@@ -57,3 +57,6 @@
   2020-05-05
 
    - Fixed you can't create and view multi waiting room only one, set you can't get room if player1, player2 both exists, set delete room if multiplay game is end, set startActivity to ResultActivity for Multiplay if  multiplay     game is end.
+
+   2020-05-05 (Update 2)
+    - Now you can use multiwaiting room with improved UI, ResultActivity for Multiplay

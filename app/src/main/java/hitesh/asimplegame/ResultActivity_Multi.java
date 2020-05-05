@@ -43,6 +43,8 @@ public class ResultActivity_Multi extends QuestionActivity {
     private static final String TAG = "Send-Result Process";
     Map<String, Long> UserScore = new HashMap<>();
     //	SendtoResult sendresult = new SendtoResult();
+    public static String user1, user2, score_player1, score_player2;
+    public static int score_user1, score_user2, sectime;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -55,11 +57,15 @@ public class ResultActivity_Multi extends QuestionActivity {
         TextView victoryuserName = findViewById(R.id.victoryuserName);
         TextView loserName = findViewById(R.id.loserName);
 
-        Bundle b = getIntent().getExtras();
-        String time = b.getString("time");
-        String user1 = b.getString("player1");
-        String user2 = b.getString("player2");
+//        Bundle b = getIntent().getExtras();
+        String time = QuestionActivity_Multi.hms;
+        String convertTime = time;
+        String[] units = time.split(":");
+        int minutes = Integer.parseInt(units[1]);
+        int seconds = Integer.parseInt(units[2]);
+        sectime = 60 * minutes + seconds;
 
+        getScore();
 
         if(time == null){
             title_TimeMulti.setText("00:00:00");
@@ -68,15 +74,6 @@ public class ResultActivity_Multi extends QuestionActivity {
         else{
             title_TimeMulti.setText("" + time);
         }
-
-        String convertTime = time;
-        String[] units = time.split(":");
-        int minutes = Integer.parseInt(units[1]);
-        int seconds = Integer.parseInt(units[2]);
-        int sectime = 60 * minutes + seconds;
-
-        int score_user1 = b.getInt("playerscore1") + sectime;
-        int score_user2 = b.getInt("playerscore2") + sectime;
 
         if(score_user1 >= score_user2){
             VictoryPoint.setText("" + score_user1 + "점");
@@ -91,29 +88,47 @@ public class ResultActivity_Multi extends QuestionActivity {
             victoryuserName.setText("" + user2);
             loserName.setText("" + user1);
         }
+    }
 
-////		sendresult.setScore(score);
-////		sendresult.setLevel("null");
-//        Long sendScore = Long.valueOf(score);
-//        UserScore.put("score", sendScore);
-//
-//        db.collection("UserScore").document(name).set(UserScore, SetOptions.merge())
-//                .addOnSuccessListener(new OnSuccessListener<Void>(){
-//                    @Override
-//                    public void onSuccess(Void aVoid) {
-//                        Log.d(TAG, "Send User Data to Server was Successfully completed");
-//                        toastMessage("사용자 데이터를 서버에 정상적으로 저장하였습니다.");
-//                    }
-//                })
-//
-//                .addOnFailureListener(new OnFailureListener() {
-//                    @Override
-//                    public void onFailure(@NonNull Exception e) {
-//                        Log.d(TAG, "Send User Data to Server was not completed.");
-//                        toastMessage("사용자 데이터를 서버로 전송하지 못하였습니다.");
-//                    }
-//                });
+    private void getScore(){
+        String currentRoom = info.getRoomInfo();
+        DocumentReference docRef = FirestoreDB.collection("MultiPlay").document(currentRoom);
+        docRef.get().addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
+            @Override
+            public void onComplete(@NonNull Task<DocumentSnapshot> task) {
+                if(task.isSuccessful()){
+                    DocumentSnapshot document = task.getResult();
 
+                    if(document != null){
+                        user1 = document.getString("player1");
+                        user2 = document.getString("player2");
+
+                        score_player1 = document.getString("player1_score");
+                        score_player2 = document.getString("player2_score");
+
+                        if(score_player1 != null && score_player2 != null){
+                            score_user1 = Integer.parseInt(score_player1) + sectime;
+                            score_user2 = Integer.parseInt(score_player2) + sectime;
+                        }
+
+                        if(score_player1 == null){
+                            score_user1 = sectime;
+                            score_user2 = Integer.parseInt(score_player2) + sectime;
+                        }
+
+                        if(score_player2 == null){
+                            score_user2 = sectime;
+                            score_user1 = Integer.parseInt(score_player1) + sectime;
+                        }
+
+                        if(score_player1 == null && score_player2 == null){
+                            score_user1 = sectime;
+                            score_user2 = sectime;
+                        }
+                    }
+                }
+            }
+        });
     }
 
     public void playagain(View o) {

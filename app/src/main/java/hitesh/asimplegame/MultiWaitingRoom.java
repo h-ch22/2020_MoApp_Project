@@ -35,7 +35,7 @@ public class MultiWaitingRoom extends MultiWaiting {
     public static CreateRoomInfo create = new CreateRoomInfo();
     FirebaseAuth mAuth = FirebaseAuth.getInstance();
     FirebaseUser user = mAuth.getCurrentUser();
-    TextView user1, user2;
+    TextView user1, user2, RoomName;
     Button start;
     String userName1, userName2, level;
     private final FirebaseFirestore db = FirebaseFirestore.getInstance();
@@ -48,9 +48,13 @@ public class MultiWaitingRoom extends MultiWaiting {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_multiwaiting);
 
+        RoomName = findViewById(R.id.RoomName);
         user1 = findViewById(R.id.nickname_user1);
         user2 = findViewById(R.id.nickname_user2);
         start = findViewById(R.id.multi_startGame);
+
+        RoomName.setText(roomName);
+
         DocumentReference docRef = db.collection("MultiPlay").document(roomName);
         docRef.get().addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
             @Override

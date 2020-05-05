@@ -5,7 +5,7 @@
     android:background = "#171739">
 
     <TextView
-        android:id = "@+id/title_Level"
+        android:id = "@+id/RoomName"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text = "Room Name"
@@ -18,13 +18,28 @@
     <LinearLayout
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop = "20dp">
+        android:layout_marginTop = "60dp">
 
         <ImageView
             android:id = "@+id/profile_user1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:src = "@drawable/ic_multiwait_user"/>
+            android:layout_marginLeft = "40dp"
+            android:src = "@drawable/ic_user"/>
+
+        <ImageView
+            android:id = "@+id/profile_user2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft = "60dp"
+            android:src = "@drawable/ic_user"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop = "20dp">
 
         <TextView
             android:id = "@+id/nickname_user1"
@@ -34,20 +49,7 @@
             android:textColor = "#ffffff"
             android:fontFamily = "@font/nanumsquarebold"
             android:textSize = "25sp"
-            android:layout_marginLeft = "10dp"/>
-
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop = "20dp">
-
-        <ImageView
-            android:id = "@+id/profile_user2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:src = "@drawable/ic_multiwait_user"/>
+            android:layout_marginLeft = "40dp"/>
 
         <TextView
             android:id = "@+id/nickname_user2"
@@ -57,7 +59,7 @@
             android:textColor = "#ffffff"
             android:fontFamily = "@font/nanumsquarebold"
             android:textSize = "25sp"
-            android:layout_marginLeft = "10dp"/>
+            android:layout_marginLeft = "40dp"/>
 
     </LinearLayout>
 
@@ -65,9 +67,8 @@
         android:id="@+id/multi_startGame"
         android:layout_width="200dp"
         android:layout_height="wrap_content"
-        android:layout_gravity="bottom"
-        android:layout_marginRight = "5dp"
-        android:layout_marginLeft = "50dp"
+        android:layout_gravity="center"
+        android:layout_marginTop = "200dp"
         android:background="@drawable/btn_roundedgradient"
         android:drawableRight="@drawable/ic_arrow_right"
         android:fontFamily="@font/nanumsquarebold"

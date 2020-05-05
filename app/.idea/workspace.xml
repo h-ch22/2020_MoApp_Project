@@ -11,16 +11,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8ac30c55-2b18-4821-966f-8bf50cadfcfe" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_constraintlayout_constraintlayout_1_1_3_aar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_constraintlayout_constraintlayout_solver_1_1_3_jar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_google_firebase_firebase_storage_19_1_0_aar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__de_hdodenhof_circleimageview_3_0_0_aar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/hitesh/asimplegame/Mypage.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/res/layout/activity_mypage.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../.gradle/6.3/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/../.gradle/6.3/executionHistory/executionHistory.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../.gradle/6.3/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/../.gradle/6.3/executionHistory/executionHistory.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.gradle/6.3/fileContent/fileContent.lock" beforeDir="false" afterPath="$PROJECT_DIR$/../.gradle/6.3/fileContent/fileContent.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../.gradle/6.3/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/../.gradle/6.3/fileHashes/fileHashes.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../.gradle/6.3/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/../.gradle/6.3/fileHashes/fileHashes.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../.gradle/6.3/fileHashes/resourceHashesCache.bin" beforeDir="false" afterPath="$PROJECT_DIR$/../.gradle/6.3/fileHashes/resourceHashesCache.bin" afterDir="false" />
@@ -29,31 +21,13 @@
       <change beforePath="$PROJECT_DIR$/../.gradle/6.3/javaCompile/javaCompile.lock" beforeDir="false" afterPath="$PROJECT_DIR$/../.gradle/6.3/javaCompile/javaCompile.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../.gradle/6.3/javaCompile/taskHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/../.gradle/6.3/javaCompile/taskHistory.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/../.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.gradle/buildOutputCleanup/cache.properties" beforeDir="false" afterPath="$PROJECT_DIR$/../.gradle/buildOutputCleanup/cache.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.gradle/buildOutputCleanup/outputFiles.bin" beforeDir="false" afterPath="$PROJECT_DIR$/../.gradle/buildOutputCleanup/outputFiles.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.gradle/checksums/checksums.lock" beforeDir="false" afterPath="$PROJECT_DIR$/../.gradle/checksums/checksums.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.gradle/checksums/md5-checksums.bin" beforeDir="false" afterPath="$PROJECT_DIR$/../.gradle/checksums/md5-checksums.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.gradle/checksums/sha1-checksums.bin" beforeDir="false" afterPath="$PROJECT_DIR$/../.gradle/checksums/sha1-checksums.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.idea/codeStyles/Project.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.idea/gradle.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.idea/misc.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.idea/modules.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.idea/workspace.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/caches/build_file_checksums.ser" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/caches/build_file_checksums.ser" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app.iml" beforeDir="false" afterPath="$PROJECT_DIR$/app.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/AndroidManifest.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/hitesh/asimplegame/Home.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/hitesh/asimplegame/Home.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/hitesh/asimplegame/QuestionActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/hitesh/asimplegame/QuestionActivity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/hitesh/asimplegame/SignUp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/hitesh/asimplegame/SignUp.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/hitesh/asimplegame/activity_gameType.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/hitesh/asimplegame/activity_gameType.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/hitesh/asimplegame/setLevel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/hitesh/asimplegame/setLevel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/res/font/nanumsquarebold.ttf" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/res/font/nanumsquarebold.ttf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/res/font/nanumsquareregular.ttf" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/res/font/nanumsquareregular.ttf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/hitesh/asimplegame/MultiWaitingRoom.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/hitesh/asimplegame/MultiWaitingRoom.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/hitesh/asimplegame/QuestionActivity_Multi.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/hitesh/asimplegame/QuestionActivity_Multi.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/hitesh/asimplegame/ResultActivity_Multi.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/hitesh/asimplegame/ResultActivity_Multi.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/res/layout/activity_ingame_multiplay.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/res/layout/activity_ingame_multiplay.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/res/layout/activity_multiwaiting.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/res/layout/activity_multiwaiting.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/../build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../local.properties" beforeDir="false" afterPath="$PROJECT_DIR$/../local.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/res/layout/activity_result_multiplay.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/res/layout/activity_result_multiplay.xml" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -91,7 +65,7 @@
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="PropertiesComponent">
     <property name="DeviceAndSnapshotComboBoxAction.selectedDevice" value="Nexus_5X_API_29_x86" />
-    <property name="DeviceAndSnapshotComboBoxAction.selectionTime" value="2020-05-05T06:01:26.029Z" />
+    <property name="DeviceAndSnapshotComboBoxAction.selectionTime" value="2020-05-05T08:50:01.813Z" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="android.sdk.path" value="$USER_HOME$/Library/Android/sdk" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/src/main/res/layout" />
@@ -209,65 +183,17 @@
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
+        <line-breakpoint enabled="true" type="java-field">
           <url>file://$PROJECT_DIR$/src/main/java/hitesh/asimplegame/ResultActivity_Multi.java</url>
-          <line>77</line>
-          <option name="timeStamp" value="76" />
+          <line>45</line>
+          <properties field="user1" class="hitesh.asimplegame.ResultActivity_Multi" />
+          <option name="timeStamp" value="14" />
         </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
+        <line-breakpoint enabled="true" type="java-field">
           <url>file://$PROJECT_DIR$/src/main/java/hitesh/asimplegame/ResultActivity_Multi.java</url>
-          <line>78</line>
-          <option name="timeStamp" value="77" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/hitesh/asimplegame/QuestionActivity_Multi.java</url>
-          <line>243</line>
-          <option name="timeStamp" value="78" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/hitesh/asimplegame/QuestionActivity_Multi.java</url>
-          <line>244</line>
-          <option name="timeStamp" value="79" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/hitesh/asimplegame/QuestionActivity_Multi.java</url>
-          <line>245</line>
-          <option name="timeStamp" value="80" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/hitesh/asimplegame/QuestionActivity_Multi.java</url>
-          <line>246</line>
-          <option name="timeStamp" value="81" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/hitesh/asimplegame/QuestionActivity_Multi.java</url>
-          <line>357</line>
-          <option name="timeStamp" value="82" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/hitesh/asimplegame/QuestionActivity_Multi.java</url>
-          <line>358</line>
-          <option name="timeStamp" value="83" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/hitesh/asimplegame/QuestionActivity_Multi.java</url>
-          <line>360</line>
-          <option name="timeStamp" value="84" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/hitesh/asimplegame/QuestionActivity_Multi.java</url>
-          <line>359</line>
-          <option name="timeStamp" value="85" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/hitesh/asimplegame/ResultActivity_Multi.java</url>
-          <line>59</line>
-          <option name="timeStamp" value="86" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/hitesh/asimplegame/ResultActivity_Multi.java</url>
-          <line>60</line>
-          <option name="timeStamp" value="87" />
+          <line>46</line>
+          <properties field="score_user1" class="hitesh.asimplegame.ResultActivity_Multi" />
+          <option name="timeStamp" value="15" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
