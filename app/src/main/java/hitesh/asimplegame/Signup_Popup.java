@@ -11,17 +11,12 @@ import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 
-import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
-import com.google.android.gms.tasks.Task;
-import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
-import com.google.firebase.auth.UserProfileChangeRequest;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
-import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.SetOptions;
 
@@ -39,7 +34,7 @@ public class Signup_Popup extends BaseActivity{
     private FirebaseDatabase mFirebaseDatabase = FirebaseDatabase.getInstance();
     private DatabaseReference mDatabaseReference = mFirebaseDatabase.getReference();
     private FirebaseFirestore db = FirebaseFirestore.getInstance();
-    Map<String, SendtoServer> UserInfo = new HashMap<>();
+    Map<String, String> UserInfo = new HashMap<String, String>();
     SendtoServer send = new SendtoServer();
 
     protected void onCreate(Bundle savedInstanceState) {
@@ -79,13 +74,12 @@ public class Signup_Popup extends BaseActivity{
 
                 if(!email.equals("") && !nickname.equals("") && !phone.equals("")){
                     showProgressDialog();
-                    send.setEmail(email);
-                    send.setPhone(phone);
-                    send.setGender(Gender);
+                    UserInfo.put("email", email);
+                    UserInfo.put("phone", phone);
+                    UserInfo.put("gender", Gender);
+                    UserInfo.put("name", nickname);
 
-                    UserInfo.put(nickname, send);
-
-                    db.collection("Users").document("UsersInfo")
+                    db.collection("Users").document(nickname)
                             .set(UserInfo, SetOptions.merge())
                             .addOnSuccessListener(new OnSuccessListener<Void>(){
                                 @Override

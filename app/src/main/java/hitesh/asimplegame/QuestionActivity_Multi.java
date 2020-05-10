@@ -57,6 +57,7 @@ public class QuestionActivity_Multi extends MultiWaiting {
     public String roomName = info.getRoomInfo();
     private String Strscore_user1 = Integer.toString(score_user1);
     private String Strscore_user2 = Integer.toString(score_user2);
+    getLevel getlevel;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -64,8 +65,22 @@ public class QuestionActivity_Multi extends MultiWaiting {
         active = true;
         setContentView(R.layout.activity_ingame_multiplay);
 
-        QuizDBOpenHelper db = new QuizDBOpenHelper(this);  // my question bank class
-        questionList = db.getAllQuestions();  // this will fetch all quetonall questions
+        getlevel = new getLevel();
+
+        if(getlevel.getLv() == "Easy") {
+            QuizDBOpenHelper db = new QuizDBOpenHelper(this);  // my question bank class
+            questionList = db.getAllQuestions();  // this will fetch all quetonall questions
+        }else if(getlevel.getLv() == "Medium"){
+            QuizDBOpenHelper_Medium db = new QuizDBOpenHelper_Medium(this);  // my question bank class
+            questionList = db.getAllQuestions();  // this will fetch all quetonall questions
+        }else if(getlevel.getLv() == "Hard"){
+            QuizDBOpenHelper_Hard db = new QuizDBOpenHelper_Hard(this);  // my question bank class
+            questionList = db.getAllQuestions();  // this will fetch all quetonall questions
+        }else{
+            QuizDBOpenHelper_Hard db = new QuizDBOpenHelper_Hard(this);  // my question bank class
+            questionList = db.getAllQuestions();  // this will fetch all quetonall questions
+        }
+
         currentQ = questionList.get(questionID); // the current question
 
         txtQuestion = (TextView) findViewById(R.id.txtQuestion);

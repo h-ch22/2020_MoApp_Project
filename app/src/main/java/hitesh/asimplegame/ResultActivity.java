@@ -11,13 +11,17 @@ import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 
+import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.firestore.DocumentReference;
+import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.SetOptions;
 
@@ -32,8 +36,10 @@ public class ResultActivity extends QuestionActivity {
 	private FirebaseFirestore db = FirebaseFirestore.getInstance();
 	private static final String TAG = "Send-Result Process";
 	Map<String, Long> UserScore = new HashMap<>();
+	Map<String, Long> HighScore = new HashMap<>();
 //	SendtoResult sendresult = new SendtoResult();
-	public int score;
+	public int score, scoredate;
+	public Long setscore, sendScore;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -59,20 +65,36 @@ public class ResultActivity extends QuestionActivity {
 		}
 
 		String convertTime = time;
-		String[] units = time.split(":"); //will break the string up into an array
-		int minutes = Integer.parseInt(units[1]); //first element
-		int seconds = Integer.parseInt(units[2]); //second element
+		String[] units = time.split(":");
+		int minutes = Integer.parseInt(units[1]);
+		int seconds = Integer.parseInt(units[2]);
 		int sectime = 60 * minutes + seconds;
 
 		score = answer + sectime;
 		textscore.setText("" + score + "점");
-
+		sendScore = Long.valueOf(score);
 		String name = user.getDisplayName();
-
-//		sendresult.setScore(score);
-//		sendresult.setLevel("null");
-		Long sendScore = Long.valueOf(score);
 		UserScore.put("score", sendScore);
+
+		final DocumentReference docRefscore = db.collection("UserScore").document(name);
+		docRefscore.get().addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
+			@Override
+			public void onComplete(@NonNull Task<DocumentSnapshot> task) {
+				if (task.isSuccessful()) {
+					DocumentSnapshot document = task.getResult();
+					if (document.exists()) {
+						Log.d(TAG, "DocumentSnapshot data: " + document.getData());
+						setscore = document.getLong("highscore");
+//						scoredate = setscore != null ? setscore.intValue() : null;
+						update_hiscore();
+					} else {
+						Log.d(TAG, "No such document");
+					}
+				} else {
+					Log.d(TAG, "get failed with ", task.getException());
+				}
+			}
+		});
 
 		db.collection("UserScore").document(name).set(UserScore, SetOptions.merge())
 				.addOnSuccessListener(new OnSuccessListener<Void>(){
@@ -91,6 +113,31 @@ public class ResultActivity extends QuestionActivity {
 					}
 				});
 
+	}
+
+	private void update_hiscore() {
+
+		if (setscore!= null && score < setscore.intValue()) {
+			HighScore.put("highscore", setscore);
+		} else {
+			HighScore.put("highscore", sendScore);
+		}
+		db.collection("UserScore").document(user.getDisplayName()).set(HighScore, SetOptions.merge())
+				.addOnSuccessListener(new OnSuccessListener<Void>() {
+					@Override
+					public void onSuccess(Void aVoid) {
+						Log.d(TAG, "Send User Data to Server was Successfully completed");
+						toastMessage("사용자 데이터를 서버에 정상적으로 저장하였습니다.");
+					}
+				})
+
+				.addOnFailureListener(new OnFailureListener() {
+					@Override
+					public void onFailure(@NonNull Exception e) {
+						Log.d(TAG, "Send User Data to Server was not completed.");
+						toastMessage("사용자 데이터를 서버로 전송하지 못하였습니다.");
+					}
+				});
 	}
 
 	public void playagain(View o) {

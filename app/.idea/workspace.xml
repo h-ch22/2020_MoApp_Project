@@ -11,8 +11,26 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8ac30c55-2b18-4821-966f-8bf50cadfcfe" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_exifinterface_exifinterface_1_0_0_aar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_firebaseui_firebase_ui_storage_6_2_1_aar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_github_bumptech_glide_annotations_4_11_0_jar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_github_bumptech_glide_disklrucache_4_11_0_jar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_github_bumptech_glide_gifdecoder_4_11_0_aar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_github_bumptech_glide_glide_4_11_0_aar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_google_android_gms_play_services_measurement_17_4_1_aar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_google_android_gms_play_services_measurement_api_17_4_1_aar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_google_android_gms_play_services_measurement_base_17_4_1_aar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_google_android_gms_play_services_measurement_impl_17_4_1_aar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_google_android_gms_play_services_measurement_sdk_17_4_1_aar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_google_firebase_firebase_core_17_4_1_aar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_google_firebase_firebase_iid_20_1_5_aar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_google_firebase_firebase_installations_16_2_1_aar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_google_firebase_firebase_installations_interop_16_0_0_aar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/hitesh/asimplegame/MyGlideModule.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/hitesh/asimplegame/QuizDBOpenHelper_Hard.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../.gradle/6.3/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/../.gradle/6.3/executionHistory/executionHistory.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../.gradle/6.3/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/../.gradle/6.3/executionHistory/executionHistory.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.gradle/6.3/fileContent/fileContent.lock" beforeDir="false" afterPath="$PROJECT_DIR$/../.gradle/6.3/fileContent/fileContent.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../.gradle/6.3/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/../.gradle/6.3/fileHashes/fileHashes.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../.gradle/6.3/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/../.gradle/6.3/fileHashes/fileHashes.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../.gradle/6.3/fileHashes/resourceHashesCache.bin" beforeDir="false" afterPath="$PROJECT_DIR$/../.gradle/6.3/fileHashes/resourceHashesCache.bin" afterDir="false" />
@@ -21,13 +39,46 @@
       <change beforePath="$PROJECT_DIR$/../.gradle/6.3/javaCompile/javaCompile.lock" beforeDir="false" afterPath="$PROJECT_DIR$/../.gradle/6.3/javaCompile/javaCompile.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../.gradle/6.3/javaCompile/taskHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/../.gradle/6.3/javaCompile/taskHistory.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/../.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.gradle/buildOutputCleanup/cache.properties" beforeDir="false" afterPath="$PROJECT_DIR$/../.gradle/buildOutputCleanup/cache.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.gradle/buildOutputCleanup/outputFiles.bin" beforeDir="false" afterPath="$PROJECT_DIR$/../.gradle/buildOutputCleanup/outputFiles.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.gradle/checksums/checksums.lock" beforeDir="false" afterPath="$PROJECT_DIR$/../.gradle/checksums/checksums.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.gradle/checksums/md5-checksums.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.gradle/checksums/sha1-checksums.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Asimplegame.iml" beforeDir="false" afterPath="$PROJECT_DIR$/../Asimplegame.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/caches/build_file_checksums.ser" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/caches/build_file_checksums.ser" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_google_android_gms_play_services_measurement_17_3_0_aar.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_google_android_gms_play_services_measurement_api_17_3_0_aar.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_google_android_gms_play_services_measurement_base_17_3_0_aar.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_google_android_gms_play_services_measurement_impl_17_3_0_aar.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_google_android_gms_play_services_measurement_sdk_17_3_0_aar.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_google_android_gms_play_services_measurement_sdk_api_17_3_0_aar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_google_android_gms_play_services_measurement_sdk_api_17_4_1_aar.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_google_firebase_firebase_analytics_17_3_0_aar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_google_firebase_firebase_analytics_17_4_1_aar.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_google_firebase_firebase_auth_19_3_0_aar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_google_firebase_firebase_auth_19_3_1_aar.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_google_firebase_firebase_core_17_3_0_aar.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_google_firebase_firebase_database_19_2_1_aar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_google_firebase_firebase_database_19_3_0_aar.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_google_firebase_firebase_firestore_21_4_2_aar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_google_firebase_firebase_firestore_21_4_3_aar.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_google_firebase_firebase_iid_20_0_2_aar.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_google_firebase_firebase_storage_19_1_0_aar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_google_firebase_firebase_storage_19_1_1_aar.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/hitesh/asimplegame/MultiWaitingRoom.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/hitesh/asimplegame/MultiWaitingRoom.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app.iml" beforeDir="false" afterPath="$PROJECT_DIR$/app.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/hitesh/asimplegame/Home.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/hitesh/asimplegame/Home.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/hitesh/asimplegame/MultiWaiting.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/hitesh/asimplegame/MultiWaiting.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/hitesh/asimplegame/Mypage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/hitesh/asimplegame/Mypage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/hitesh/asimplegame/QuestionActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/hitesh/asimplegame/QuestionActivity.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/hitesh/asimplegame/QuestionActivity_Multi.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/hitesh/asimplegame/QuestionActivity_Multi.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/hitesh/asimplegame/QuizDBOpenHelper_Medium.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/hitesh/asimplegame/QuizDBOpenHelper_Medium.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/hitesh/asimplegame/Ranking.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/hitesh/asimplegame/Ranking.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/hitesh/asimplegame/ResultActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/hitesh/asimplegame/ResultActivity.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/hitesh/asimplegame/ResultActivity_Multi.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/hitesh/asimplegame/ResultActivity_Multi.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/hitesh/asimplegame/SignUp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/hitesh/asimplegame/SignUp.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/hitesh/asimplegame/Signup_Popup.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/hitesh/asimplegame/Signup_Popup.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/hitesh/asimplegame/createRoomactivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/hitesh/asimplegame/createRoomactivity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/hitesh/asimplegame/setLevel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/hitesh/asimplegame/setLevel.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/res/layout/activity_ingame_multiplay.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/res/layout/activity_ingame_multiplay.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/res/layout/activity_multiwaiting.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/res/layout/activity_multiwaiting.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/res/layout/activity_result_multiplay.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/res/layout/activity_result_multiplay.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/res/layout/activity_ranking.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/res/layout/activity_ranking.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../local.properties" beforeDir="false" afterPath="$PROJECT_DIR$/../local.properties" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -65,7 +116,7 @@
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="PropertiesComponent">
     <property name="DeviceAndSnapshotComboBoxAction.selectedDevice" value="Nexus_5X_API_29_x86" />
-    <property name="DeviceAndSnapshotComboBoxAction.selectionTime" value="2020-05-05T08:50:01.813Z" />
+    <property name="DeviceAndSnapshotComboBoxAction.selectionTime" value="2020-05-08T12:42:34.477Z" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="android.sdk.path" value="$USER_HOME$/Library/Android/sdk" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/src/main/res/layout" />

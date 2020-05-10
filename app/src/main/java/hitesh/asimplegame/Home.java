@@ -78,14 +78,14 @@ public class Home extends Activity {
         });
 
         CollectionReference rankRef = db.collection("UserScore");
-        rankRef.orderBy("score", com.google.firebase.firestore.Query.Direction.DESCENDING).get().addOnSuccessListener(new OnSuccessListener<QuerySnapshot>() {
+        rankRef.orderBy("highscore", com.google.firebase.firestore.Query.Direction.DESCENDING).limit(10).get().addOnSuccessListener(new OnSuccessListener<QuerySnapshot>() {
             @Override
             public void onSuccess(QuerySnapshot task) {
                 int count = 0;
                 for(QueryDocumentSnapshot doc : task){
-                    Log.d(TAG, doc.getId() + "->" + doc.getLong("score"));
+                    Log.d(TAG, doc.getId() + "->" + doc.getLong("highscore"));
                     name[count] = doc.getId();
-                    score[count] = doc.getLong("score");
+                    score[count] = doc.getLong("highscore");
                     scoreRank[count] = score[count].toString();
                     count++;
                 }

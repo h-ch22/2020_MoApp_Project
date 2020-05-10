@@ -65,7 +65,7 @@ public class createRoomactivity extends BaseActivity{
             @Override
             public void onClick(View v) {
                 showProgressDialog();
-                roomName = Roomname.getText().toString();
+                roomName = Roomname.getText().toString() + "(" + level + ")";
 
                 if(!roomName.equals("")){
                     create.setPlayer1(user.getDisplayName());

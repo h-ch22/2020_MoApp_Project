@@ -39,6 +39,7 @@ public class setLevel extends Activity {
             @Override
             public void onClick(View v) {
                 level = "Medium";
+                getlevel.setLv(level);
                 Intent intent = new Intent(setLevel.this, activity_gameType.class);
                 startActivity(intent);
                 finish();
@@ -49,6 +50,7 @@ public class setLevel extends Activity {
             @Override
             public void onClick(View v) {
                 level = "Hard";
+                getlevel.setLv(level);
                 Intent intent = new Intent(setLevel.this, activity_gameType.class);
                 startActivity(intent);
                 finish();

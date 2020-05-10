@@ -1,8 +1,12 @@
 package hitesh.asimplegame;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
 import android.widget.EditText;
+import android.widget.ImageButton;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
@@ -33,10 +37,10 @@ public class Ranking extends AppCompatActivity {
     private Query mMessagesQuery;
     private ValueEventListener mMessagesListener;
     private ChildEventListener mMessagesQueryListener;
-    private EditText rank_1, rank_2, rank_3, rank_4, rank_5, rank_6, rank_7, rank_8, rank_9, rank_10;
+    private TextView rank_1, rank_2, rank_3, rank_4, rank_5, rank_6, rank_7, rank_8, rank_9, rank_10;
     private static final String TAG = "Query : ";
     private FirebaseFirestore db = FirebaseFirestore.getInstance();
-    CollectionReference rankRef;
+    private ImageButton backbt;
     Long[] score = new Long[10];
     String[] name = new String[10];
     String[] scoreRank = new String[10];
@@ -47,10 +51,8 @@ public class Ranking extends AppCompatActivity {
         toastMessage("랭킹 데이터에 연결하는 중...");
         mDatabaseReference = FirebaseDatabase.getInstance().getReference();
 
-        rank_1 = (EditText) findViewById(R.id.value_mainrank_1st);
-        rank_1.setText(scoreRank[0]);
+        rank_1 = (TextView) findViewById(R.id.value_mainrank_1st);
         rank_2 = findViewById(R.id.value_mainrank_2nd);
-        rank_2.setText(scoreRank[1]);
         rank_3 = findViewById(R.id.value_mainrank_3rd);
         rank_4 = findViewById(R.id.value_mainrank_4th);
         rank_5 = findViewById(R.id.value_mainrank_5th);
@@ -59,21 +61,31 @@ public class Ranking extends AppCompatActivity {
         rank_8 = findViewById(R.id.value_rank_8th);
         rank_9 = findViewById(R.id.value_rank_9th);
         rank_10 = findViewById(R.id.value_rank_10th);
+        backbt = findViewById(R.id.Btn_Back);
+
+        backbt.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(Ranking.this, Home.class);
+                finish();
+                startActivity(intent);
+            }
+        });
     }
 
     public void Query(){
         CollectionReference rankRef = db.collection("UserScore");
-        rankRef.orderBy("score", Direction.DESCENDING).get().addOnSuccessListener(new OnSuccessListener<QuerySnapshot>() {
+        rankRef.orderBy("highscore", Direction.DESCENDING).limit(10).get().addOnSuccessListener(new OnSuccessListener<QuerySnapshot>() {
             @Override
             public void onSuccess(QuerySnapshot task) {
                 int count = 0;
-                    for(QueryDocumentSnapshot doc : task){
-                        Log.d(TAG, doc.getId() + "->" + doc.getLong("score"));
-                        name[count] = doc.getId();
-                        score[count] = doc.getLong("score");
-                        scoreRank[count] = score[count].toString();
-                        count++;
-                    }
+                for(QueryDocumentSnapshot doc : task){
+                    Log.d(TAG, doc.getId() + "->" + doc.getLong("highscore"));
+                    name[count] = doc.getId();
+                    score[count] = doc.getLong("highscore");
+                    scoreRank[count] = score[count].toString();
+                    count++;
+                }
 
                 rank_1.setText(name[0] + " : " + scoreRank[0]);
                 rank_2.setText(name[1] + " : " + scoreRank[1]);

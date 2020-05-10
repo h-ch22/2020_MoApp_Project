@@ -45,6 +45,7 @@ public class ResultActivity_Multi extends QuestionActivity {
     //	SendtoResult sendresult = new SendtoResult();
     public static String user1, user2, score_player1, score_player2;
     public static int score_user1, score_user2, sectime;
+    private String currentRoom = info.getRoomInfo();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -88,6 +89,8 @@ public class ResultActivity_Multi extends QuestionActivity {
             victoryuserName.setText("" + user2);
             loserName.setText("" + user1);
         }
+
+//        deleteRoom();
     }
 
     private void getScore(){
@@ -130,6 +133,25 @@ public class ResultActivity_Multi extends QuestionActivity {
             }
         });
     }
+
+//    private void deleteRoom(){
+//        String currentRoom = info.getRoomInfo();
+//        DocumentReference docRef = FirestoreDB.collection("MultiPlay").document(currentRoom);
+//        docRef.delete()
+//                .addOnSuccessListener(new OnSuccessListener<Void>() {
+//                    @Override
+//                    public void onSuccess(Void aVoid) {
+//                        toastMessage("방 제거가 완료되었습니다.");
+//                    }
+//                })
+//
+//                .addOnFailureListener(new OnFailureListener() {
+//                    @Override
+//                    public void onFailure(@NonNull Exception e) {
+//                        toastMessage("방 제거를 완료하지 못했습니다.");
+//                    }
+//                });
+//    }
 
     public void playagain(View o) {
         Intent intent = new Intent(this, Home.class);

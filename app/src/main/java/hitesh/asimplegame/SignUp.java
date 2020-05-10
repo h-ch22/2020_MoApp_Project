@@ -42,7 +42,7 @@ public class SignUp extends BaseActivity {
     private FirebaseDatabase mFirebaseDatabase = FirebaseDatabase.getInstance();
     private DatabaseReference mDatabaseReference = mFirebaseDatabase.getReference();
     private FirebaseFirestore db = FirebaseFirestore.getInstance();
-    Map<String, SendtoServer> UserInfo = new HashMap<>();
+    Map<String, String> UserInfo = new HashMap<String, String>();
     SendtoServer send = new SendtoServer();
     DocumentReference docRef;
 
@@ -85,11 +85,10 @@ public class SignUp extends BaseActivity {
 
                 if(!email.equals("") && !password.equals("") && !nickname.equals("") && !phone.equals("")){
                     showProgressDialog();
-                    send.setEmail(email);
-                    send.setPhone(phone);
-                    send.setGender(Gender);
-
-                    UserInfo.put(nickname, send);
+                    UserInfo.put("email", email);
+                    UserInfo.put("phone", phone);
+                    UserInfo.put("gender", Gender);
+                    UserInfo.put("name", nickname);
 
                     db.collection("Users").document(nickname)
                             .set(UserInfo, SetOptions.merge())

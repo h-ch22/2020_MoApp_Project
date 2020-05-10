@@ -91,7 +91,13 @@ public class MultiWaiting extends BaseActivity {
                         DocumentSnapshot document = task.getResult();
 
                         if(document.exists()){
-                            if(document.get("player1") == null){
+                            String lv = document.get("level").toString();
+
+                            if(!lv.equals(getLevel.getLv())){
+                                toastMessage("선택한 난이도와 다른 난이도가 설정된 방입니다. 다른 방을 선택해주세요.");
+                            }
+
+                            else if(document.get("player1") == null){
                                 mFirestore.collection("MultiPlay").document(MultiRoom1.getText().toString())
                                         .update("player1", user.getDisplayName())
                                         .addOnSuccessListener(new OnSuccessListener<Void>() {
@@ -106,7 +112,7 @@ public class MultiWaiting extends BaseActivity {
                                         });
                             }
 
-                            if(document.get("player2") == null){
+                            else if(document.get("player2") == null){
                                 mFirestore.collection("MultiPlay").document(MultiRoom1.getText().toString())
                                         .update("player2", user.getDisplayName())
                                         .addOnSuccessListener(new OnSuccessListener<Void>() {
@@ -142,7 +148,13 @@ public class MultiWaiting extends BaseActivity {
                         DocumentSnapshot document = task.getResult();
 
                         if(document.exists()){
-                            if(document.get("player1") == null){
+                            String lv = document.get("level").toString();
+
+                            if(!lv.equals(getLevel.getLv())){
+                                toastMessage("선택한 난이도와 다른 난이도가 설정된 방입니다. 다른 방을 선택해주세요.");
+                            }
+
+                            else if(document.get("player1") == null){
                                 mFirestore.collection("MultiPlay").document(MultiRoom2.getText().toString())
                                         .update("player1", user.getDisplayName())
                                         .addOnSuccessListener(new OnSuccessListener<Void>() {
@@ -157,7 +169,7 @@ public class MultiWaiting extends BaseActivity {
                                         });
                             }
 
-                            if(document.get("player2") == null){
+                            else if(document.get("player2") == null){
                                 mFirestore.collection("MultiPlay").document(MultiRoom2.getText().toString())
                                         .update("player2", user.getDisplayName())
                                         .addOnSuccessListener(new OnSuccessListener<Void>() {
@@ -194,7 +206,13 @@ public class MultiWaiting extends BaseActivity {
                         DocumentSnapshot document = task.getResult();
 
                         if(document.exists()){
-                            if(document.get("player1") == null){
+                            String lv = document.get("level").toString();
+
+                            if(!lv.equals(getLevel.getLv())){
+                                toastMessage("선택한 난이도와 다른 난이도가 설정된 방입니다. 다른 방을 선택해주세요.");
+                            }
+
+                            else if(document.get("player1") == null){
                                 mFirestore.collection("MultiPlay").document(MultiRoom3.getText().toString())
                                         .update("player1", user.getDisplayName())
                                         .addOnSuccessListener(new OnSuccessListener<Void>() {
@@ -209,7 +227,7 @@ public class MultiWaiting extends BaseActivity {
                                         });
                             }
 
-                            if(document.get("player2") == null){
+                            else if(document.get("player2") == null){
                                 mFirestore.collection("MultiPlay").document(MultiRoom3.getText().toString())
                                         .update("player2", user.getDisplayName())
                                         .addOnSuccessListener(new OnSuccessListener<Void>() {
@@ -246,7 +264,13 @@ public class MultiWaiting extends BaseActivity {
                         DocumentSnapshot document = task.getResult();
 
                         if(document.exists()){
-                            if(document.get("player1") == null){
+                            String lv = document.get("level").toString();
+
+                            if(!lv.equals(getLevel.getLv())){
+                                toastMessage("선택한 난이도와 다른 난이도가 설정된 방입니다. 다른 방을 선택해주세요.");
+                            }
+
+                            else if(document.get("player1") == null){
                                 mFirestore.collection("MultiPlay").document(MultiRoom4.getText().toString())
                                         .update("player1", user.getDisplayName())
                                         .addOnSuccessListener(new OnSuccessListener<Void>() {
@@ -261,7 +285,7 @@ public class MultiWaiting extends BaseActivity {
                                         });
                             }
 
-                            if(document.get("player2") == null){
+                            else if(document.get("player2") == null){
                                 mFirestore.collection("MultiPlay").document(MultiRoom4.getText().toString())
                                         .update("player2", user.getDisplayName())
                                         .addOnSuccessListener(new OnSuccessListener<Void>() {

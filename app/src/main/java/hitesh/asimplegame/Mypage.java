@@ -13,14 +13,19 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageButton;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 
+import com.bumptech.glide.Glide;
+import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.auth.UserProfileChangeRequest;
 import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
@@ -42,32 +47,33 @@ public class Mypage extends BaseActivity {
     private CircleImageView circle;
     private Button mypagesave, mypagelogout, uploadbtn;
     private EditText name, number, email;
+    private TextView score, highscore;
     private ImageButton homebtn, profilebtn, malebtn, femalebtn;
-    private String gender;
+    private String gender, phone;
     private FirebaseFirestore db = FirebaseFirestore.getInstance();
     private static final int GALLERY_CODE = 10;
-    private static String phoneNumber;
-    Map<String, SendtoServer> UserInfo = new HashMap<>();
-    SendtoServer send = new SendtoServer();
-    FirebaseStorage storage;
-    StorageReference storageReference;
+    final FirebaseStorage storage = FirebaseStorage.getInstance();
     private Uri filePath;
     private String Displayname;
+    StorageReference storageRef = storage.getReference();
+    SendtoServer send = new SendtoServer();
+    public Long setscore, sethighscore;
 
 
     protected void onCreate(Bundle savedInstanceState) {
 
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
-            requestPermissions(new String[]{Manifest.permission.READ_EXTERNAL_STORAGE},0);
+            requestPermissions(new String[]{Manifest.permission.READ_EXTERNAL_STORAGE}, 0);
         }
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_mypage);
 
         mAuth = FirebaseAuth.getInstance();
-        storage = FirebaseStorage.getInstance();
-        storageReference = storage.getReference();
+
         final FirebaseUser user = mAuth.getCurrentUser();
+        Displayname = user.getDisplayName();
+        StorageReference ref = FirebaseStorage.getInstance().getReference("images/"+getUid());
 
         uploadbtn = findViewById(R.id.mypage_upload);
         mypagesave = findViewById(R.id.mypage_savebtn);
@@ -77,9 +83,11 @@ public class Mypage extends BaseActivity {
         email = findViewById(R.id.mypage_Emailvaule);
         homebtn = findViewById(R.id.mypage_backbtu);
         profilebtn = findViewById(R.id.mypage_setprofile);
-        malebtn =  findViewById(R.id.mypage_male);
+        malebtn = findViewById(R.id.mypage_male);
         femalebtn = findViewById(R.id.mypage_female);
         circle = findViewById(R.id.mypage_profile1);
+        score = findViewById(R.id.mypage_lastscorevalue);
+        highscore = findViewById(R.id.mypage_highscorevaule);
 
         homebtn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -90,16 +98,16 @@ public class Mypage extends BaseActivity {
             }
         });
 
-        Displayname = user.getDisplayName();
-        name.setText(Displayname);
+        Glide.with(this).load(ref).into(circle);
 
+        name.setText(Displayname);
+        email.setText(user.getEmail());
         profilebtn.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v) {
                 SelectImage();
             }
         });
-
         uploadbtn.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v) {
@@ -107,18 +115,48 @@ public class Mypage extends BaseActivity {
             }
         });
 
-        email.setText(user.getEmail());
 
-        DocumentReference docRef = db.collection("Users").document(Displayname);
-        docRef.get().addOnSuccessListener(new OnSuccessListener<DocumentSnapshot>() {
+        final DocumentReference docRefuser = db.collection("Users").document(Displayname);
+        docRefuser.get().addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
             @Override
-            public void onSuccess(DocumentSnapshot documentSnapshot) {
-                String phoneNumber = documentSnapshot.getString("phone");
-                System.out.println("폰넘버"+phoneNumber);
+            public void onComplete(@NonNull Task<DocumentSnapshot> task) {
+                if (task.isSuccessful()) {
+                    DocumentSnapshot document = task.getResult();
+                    if (document.exists()) {
+                        Log.d(TAG, "DocumentSnapshot data: " + document.getData());
+                        number.setText(document.getString("phone"));
+                    } else {
+                        Log.d(TAG, "No such document");
+                    }
+                } else {
+                    Log.d(TAG, "get failed with ", task.getException());
+                }
             }
         });
 
-        number.setText(phoneNumber);
+        final DocumentReference docRefscore = db.collection("UserScore").document(Displayname);
+        docRefscore.get().addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
+            @Override
+            public void onComplete(@NonNull Task<DocumentSnapshot> task) {
+                if (task.isSuccessful()) {
+                    DocumentSnapshot document = task.getResult();
+                    if (document.exists()) {
+                        Log.d(TAG, "DocumentSnapshot data: " + document.getData());
+                        score.setText(document.getLong("score").toString());
+                        if(document.getLong("highscore") != null){
+                        highscore.setText(document.getLong("highscore").toString());
+                        }
+                        setscore = document.getLong("score");
+                        sethighscore = document.getLong("highscore");
+                    } else {
+                        Log.d(TAG, "No such document");
+                    }
+                } else {
+                    Log.d(TAG, "get failed with ", task.getException());
+                }
+            }
+        });
+
         malebtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -145,32 +183,40 @@ public class Mypage extends BaseActivity {
         });
 
         mypagesave.setOnClickListener(new View.OnClickListener() {
+
             @Override
             public void onClick(View v) {
-                String newname = name.getText().toString();
-                String newemail = email.getText().toString();
-                String newnumber = number.getText().toString();
-                //user.updateEmail(newemail);
-                UserInfo.put(Displayname, send);
-                send.setEmail(newemail);
-                send.setPhone(newnumber);
-                send.setGender(gender);
-                db.collection("Users").document(user.getDisplayName())
-                        .set(UserInfo, SetOptions.merge())
-                        .addOnSuccessListener(new OnSuccessListener<Void>(){
-                            @Override
-                            public void onSuccess(Void aVoid) {
-                                Log.d(TAG, "Send User Data to Server was Successfully completed");
-                            }
-                        })
+                String newname =name.getText().toString().trim();
+                String newnumber = number.getText().toString().trim();
+                String newemail = email.getText().toString().trim();
 
-                        .addOnFailureListener(new OnFailureListener() {
-                            @Override
-                            public void onFailure(@NonNull Exception e) {
-                                Log.d(TAG, "Send User Data to Server was not completed.");
-                            }
-                        });
-                Toast.makeText(Mypage.this, "저장되었습니다", Toast.LENGTH_SHORT).show();
+                if(!newnumber.equals("") && !newname.equals("") && !newemail.equals("")) {
+                    UserProfileChangeRequest profileUpdates = new UserProfileChangeRequest.Builder()
+                            .setDisplayName(newname)
+                            .build();
+                    user.updateProfile(profileUpdates)
+                            .addOnCompleteListener(new OnCompleteListener<Void>() {
+                                @Override
+                                public void onComplete(@NonNull Task<Void> task) {
+                                    if (task.isSuccessful()) {
+                                        Log.d(TAG, "User profile updated.");
+                                        update();
+                                    }
+                                }
+                            });
+                    user.updateEmail(newemail)
+                            .addOnCompleteListener(new OnCompleteListener<Void>() {
+                                @Override
+                                public void onComplete(@NonNull Task<Void> task) {
+                                    if (task.isSuccessful()) {
+                                        Log.d(TAG, "User email address updated.");
+                                    }
+                                }
+                            });
+                    Toast.makeText(Mypage.this, "저장되었습니다", Toast.LENGTH_SHORT).show();
+                }
+                else
+                    Toast.makeText(Mypage.this, "필드를 채워주세요", Toast.LENGTH_SHORT).show();
             }
         });
     }
@@ -186,12 +232,7 @@ public class Mypage extends BaseActivity {
     protected void onActivityResult(int requestCode, int resultCode, Intent data)
     {
         super.onActivityResult(requestCode, resultCode, data);
-        // checking request code and result code
-        // if request code is PICK_IMAGE_REQUEST and
-        // resultCode is RESULT_OK
-        // then set image in the image view
         if (requestCode == GALLERY_CODE && resultCode == RESULT_OK && data != null && data.getData() != null) {
-            // Get the Uri of data
             filePath = data.getData();
             try {
                 // Setting image on image view using Bitmap
@@ -205,6 +246,75 @@ public class Mypage extends BaseActivity {
         }
     }
 
+    private void update() {
+        final FirebaseUser user = mAuth.getCurrentUser();
+        String newDisplayname = user.getDisplayName();
+        Map<String, Object> UserInfo = new HashMap<>();
+        Map<String, Long> UserScore = new HashMap<>();
+        String newname =name.getText().toString().trim();
+        String newnumber = number.getText().toString().trim();
+        String newemail = email.getText().toString().trim();
+
+        UserInfo.put("email", newemail);
+        UserInfo.put("phone", newnumber);
+        UserInfo.put("gender", gender);
+        UserInfo.put("name", newname);
+
+        db.collection("Users").document(Displayname).delete()
+                .addOnSuccessListener(new OnSuccessListener<Void>() {
+                    @Override
+                    public void onSuccess(Void aVoid) {
+                        Log.d(TAG, "DocumentSnapshot successfully deleted!");
+                    }
+                })
+                .addOnFailureListener(new OnFailureListener() {
+                    @Override
+                    public void onFailure(@NonNull Exception e) {
+                        Log.w(TAG, "Error deleting document", e);
+                    }
+                });
+
+        db.collection("UserScore").document(Displayname).delete()
+                .addOnSuccessListener(new OnSuccessListener<Void>() {
+                    @Override
+                    public void onSuccess(Void aVoid) {
+                        Log.d(TAG, "DocumentSnapshot successfully deleted!");
+                    }
+                })
+                .addOnFailureListener(new OnFailureListener() {
+                    @Override
+                    public void onFailure(@NonNull Exception e) {
+                        Log.w(TAG, "Error deleting document", e);
+                    }
+                });
+
+        db.collection("Users").document(newDisplayname).set(UserInfo, SetOptions.merge())
+                .addOnSuccessListener(new OnSuccessListener<Void>() {
+                    @Override
+                    public void onSuccess(Void aVoid) {
+                        Log.d(TAG, "DocumentSnapshot successfully updated!");
+                    }
+                });
+
+        UserScore.put("score", setscore);
+        UserScore.put("highscore",sethighscore);
+
+        db.collection("UserScore").document(newDisplayname).set(UserScore, SetOptions.merge())
+                .addOnSuccessListener(new OnSuccessListener<Void>(){
+                    @Override
+                    public void onSuccess(Void aVoid) {
+                        Log.d(TAG, "Send User Data to Server was Successfully completed");
+                    }
+                })
+
+                .addOnFailureListener(new OnFailureListener() {
+                    @Override
+                    public void onFailure(@NonNull Exception e) {
+                        Log.d(TAG, "Send User Data to Server was not completed.");
+                    }
+                });
+    }
+
     private void uploadImage() {
         if (filePath != null) {
             // Code for showing progressDialog while uploading
@@ -212,36 +322,28 @@ public class Mypage extends BaseActivity {
             progressDialog.setTitle("Uploading...");
             progressDialog.show();
 
-            // Defining the child of storageReference
-            //StorageReference ref = storageReference.child("images/" + UUID.randomUUID().toString());
-            StorageReference ref = storageReference.child("images/" + Displayname);
-            // adding listeners on upload
-            // or failure of image
+            StorageReference ref = storageRef.child("images/" + getUid());
             ref.putFile(filePath).addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
-                            @Override
-                                public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
-                                // Image uploaded successfully
-                                // Dismiss dialog
-                                progressDialog.dismiss();
-                                Toast.makeText(Mypage.this, "Image Uploaded!!", Toast.LENGTH_SHORT).show();
-                                }
-                            }).addOnFailureListener(new OnFailureListener() {
-                            @Override
-                            public void onFailure(@NonNull Exception e) {
-                            // Error, Image not uploaded
-                            progressDialog.dismiss();
-                            Toast.makeText(Mypage.this, "Failed " + e.getMessage(), Toast.LENGTH_SHORT).show();
-                            }
-                            }).addOnProgressListener(new OnProgressListener<UploadTask.TaskSnapshot>() {
-                        // Progress Listener for loading
-                        // percentage on the dialog box
-                            @Override
-                            public void onProgress(UploadTask.TaskSnapshot taskSnapshot) {
-                                    double progress = (100.0 * taskSnapshot.getBytesTransferred() / taskSnapshot.getTotalByteCount());
-                                    progressDialog.setMessage("Uploaded " + (int) progress + "%");
-                            }
-                            });
+                @Override
+                public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
+                    progressDialog.dismiss();
+                    Toast.makeText(Mypage.this, "Image Uploaded!!", Toast.LENGTH_SHORT).show();
+                }
+            }).addOnFailureListener(new OnFailureListener() {
+                @Override
+                public void onFailure(@NonNull Exception e) {
+                    progressDialog.dismiss();
+                    Toast.makeText(Mypage.this, "Failed " + e.getMessage(), Toast.LENGTH_SHORT).show();
+                }
+            }).addOnProgressListener(new OnProgressListener<UploadTask.TaskSnapshot>() {
+                // Progress Listener for loading
+                // percentage on the dialog box
+                @Override
+                public void onProgress(UploadTask.TaskSnapshot taskSnapshot) {
+                    double progress = (100.0 * taskSnapshot.getBytesTransferred() / taskSnapshot.getTotalByteCount());
+                    progressDialog.setMessage("Uploaded " + (int) progress + "%");
+                }
+            });
         }
     }
 }
-

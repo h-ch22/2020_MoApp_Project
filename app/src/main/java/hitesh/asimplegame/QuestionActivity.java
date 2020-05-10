@@ -5,6 +5,7 @@ package hitesh.asimplegame;
  */
 
 
+import java.util.Collections;
 import java.util.List;
 import java.util.TimerTask;
 import java.util.concurrent.TimeUnit;
@@ -38,6 +39,7 @@ public class QuestionActivity extends Activity {
     public String hms;
     CounterClass timer = new CounterClass(60000, 1000);
     static boolean active = false;
+    getLevel getlevel;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -45,10 +47,24 @@ public class QuestionActivity extends Activity {
         active = true;
         setContentView(R.layout.activity_main);
 
-        QuizDBOpenHelper db = new QuizDBOpenHelper(this);  // my question bank class
-        questionList = db.getAllQuestions();  // this will fetch all quetonall questions
-        currentQ = questionList.get(questionID); // the current question
+        getlevel = new getLevel();
 
+        if(getlevel.getLv() == "Easy") {
+            QuizDBOpenHelper db = new QuizDBOpenHelper(this);  // my question bank class
+            questionList = db.getAllQuestions();  // this will fetch all quetonall questions
+        }else if(getlevel.getLv() == "Medium"){
+            QuizDBOpenHelper_Medium db = new QuizDBOpenHelper_Medium(this);  // my question bank class
+            questionList = db.getAllQuestions();  // this will fetch all quetonall questions
+        }else if(getlevel.getLv() == "Hard"){
+            QuizDBOpenHelper_Hard db = new QuizDBOpenHelper_Hard(this);  // my question bank class
+            questionList = db.getAllQuestions();  // this will fetch all quetonall questions
+        }else{
+            QuizDBOpenHelper_Hard db = new QuizDBOpenHelper_Hard(this);  // my question bank class
+            questionList = db.getAllQuestions();  // this will fetch all quetonall questions
+        }
+
+//        currentQ = questionList.get(questionID); // the current question
+        Collections.shuffle(questionList);
         txtQuestion = (TextView) findViewById(R.id.txtQuestion);
         // the textview in which the question will be displayed
 
@@ -146,7 +162,6 @@ public class QuestionActivity extends Activity {
 
         if (questionID < 20) {
             // if questions are not over then do this
-            currentQ = questionList.get(questionID);
             setQuestionView();
         }
 
@@ -211,6 +226,8 @@ public class QuestionActivity extends Activity {
 
     private void setQuestionView() {
         // the method which will put all things together
+        currentQ = questionList.get(questionID);
+
         txtQuestion.setText(currentQ.getQUESTION());
         button1.setText(currentQ.getOPTA());
         button1.setBackgroundResource(R.drawable.btn_rounded);
